@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+void main() {
+    int moisture;   
+
+    printf("Enter the soil moisture level (0 to 100): ");
+    scanf("%d", &moisture);
+
+   if (moisture < 0 || moisture > 100) {
+        printf("Error: Invalid input! Moisture level must be between 0 and 100.\n");
+    }
+    else {
+       
+       if (moisture < 80) {
+            printf("Soil moisture is %d%%. Motor is ON to supply water.\n", moisture);
+        }
+       
+        else {
+            printf("Soil moisture is %d%%. Motor remains OFF.\n", moisture);
+        }
+    }
+
+}
