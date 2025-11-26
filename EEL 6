@@ -1,0 +1,33 @@
+#include <stdio.h>
+ int main() {
+char name[50], type; 
+int area, rate, tax;
+ printf("=========================\n"); 
+printf(" PROPERTY TAX BILL SYSTEM \n");
+ printf("=========================\n");
+ printf("Enter Owner Name :"); 
+ scanf("%s", name);
+ printf("Enter Property Type (R/C) : "); 
+ scanf(" %c", &type);
+ printf("Enter Area in sq.ft : "); 
+ scanf("%d", &area);
+ if (type == 'R' || type == 'r'){ 
+     rate = 10; 
+ }
+ else{ 
+     rate = 20;tax = area * rate;
+ }
+printf("\n-------------------------------------\n");
+printf(" PROPERTY TAX BILL \n"); 
+printf("-------------------------------------\n"); 
+printf("Owner Name : %s\n", name);
+ printf("Property Type : %c\n", type);
+ printf("Area (sq.ft) : %d\n", area); 
+printf("Rate per sq.ft : %d\n", rate);
+ printf("-------------------------------------\n");
+ printf("TOTAL TAX : %d\n", tax);
+ printf("-------------------------------------\n"); 
+
+return 0;
+
+ } 
