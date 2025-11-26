@@ -1,44 +1,24 @@
 #include <stdio.h>
 
 void main() {
-    int n, i;
-    float noise, sum = 0, average;
+    int moisture;   
 
-    printf("Enter the number of noise readings: ");
-    scanf("%d", &n);
+    printf("Enter the soil moisture level (0 to 100): ");
+    scanf("%d", &moisture);
 
-    if (n <= 0) {
-        printf("Invalid number of readings!\n");
-        
+   if (moisture < 0 || moisture > 100) {
+        printf("Error: Invalid input! Moisture level must be between 0 and 100.\n");
     }
-
-    for (i = 1; i <= n; i++) {
-        printf("Enter noise level %d (in dB): ", i);
-        scanf("%f", &noise);
-
-        if (noise < 0) {
-            printf("Invalid noise value! Please enter positive value.\n");
-         
-        }
-
-        sum = sum + noise;
-    }
-
-    average = sum / n;
-
-    printf("\nAverage Noise Level = %.2f dB\n", average);
-
-    if (average < 30) {
-        printf("Status: Very Low (Almost Silent)\n");
-    } 
-    else if (average >= 30 && average < 60) {
-        printf("Status: Normal / Hearable\n");
-    } 
-    else if (average >= 60 && average < 90) {
-        printf("Status: Loud\n");
-    } 
     else {
-        printf("Status: Too Loud / Dangerous\n");
+       
+       if (moisture < 80) {
+            printf("Soil moisture is %d%%. Motor is ON to supply water.\n", moisture);
+        }
+       
+        else {
+            printf("Soil moisture is %d%%. Motor remains OFF.\n", moisture);
+        }
     }
 
 }
+
